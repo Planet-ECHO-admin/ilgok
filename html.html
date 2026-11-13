@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2026 미래 창업가 리더십 장학금 수혜 가이드북</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F7F6; --surface:#FFFFFF; --ink:#1B2420; --muted:#55625B;
+  --pine:#1D4434; --sprout:#3C8A5C; --ochre:#B8862A; --mist:#E2EBE5; --line:#CFDBD3;
+  --seal:#9E3B2C;
+  color-scheme: light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121815; --surface:#1A221E; --ink:#E6EDE8; --muted:#A3B2A9;
+    --pine:#9FD3B4; --sprout:#6FC08E; --ochre:#E0B55A; --mist:#22302A; --line:#2F3F37;
+    --seal:#E07A66;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121815; --surface:#1A221E; --ink:#E6EDE8; --muted:#A3B2A9;
+  --pine:#9FD3B4; --sprout:#6FC08E; --ochre:#E0B55A; --mist:#22302A; --line:#2F3F37;
+  --seal:#E07A66;
+  color-scheme: dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 16px);scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  font-size:17px;line-height:1.75;word-break:keep-all;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Gowun Batang","Nanum Myeongjo",Batang,serif;font-weight:700;line-height:1.35;color:var(--pine);margin:0}
+h2{font-size:1.75rem;margin-bottom:.9rem}
+h3{font-size:1.2rem;margin:1.8rem 0 .5rem}
+p{margin:0 0 1rem}
+a{color:var(--sprout)}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:2px;border-radius:4px}
+img{max-width:100%}
+
+/* layout */
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1fr;gap:40px}
+@media(min-width:960px){.wrap{grid-template-columns:220px minmax(0,1fr)}}
+nav.toc{display:none}
+@media(min-width:960px){
+  nav.toc{display:block;position:sticky;top:calc(env(safe-area-inset-top,0px) + 32px);align-self:start;padding-top:8px}
+}
+nav.toc ol{list-style:none;padding:0;margin:0;counter-reset:t}
+nav.toc li{counter-increment:t}
+nav.toc a{display:block;padding:6px 0 6px 12px;border-left:2px solid var(--line);text-decoration:none;color:var(--muted);font-size:.92rem}
+nav.toc a:hover,nav.toc a.on{color:var(--pine);border-left-color:var(--ochre)}
+main{max-width:740px;min-width:0}
+section{padding:56px 0 8px;border-top:1px solid var(--line)}
+section:first-of-type{border-top:0}
+
+/* hero: the certificate */
+header.hero{padding:48px 20px 24px}
+.cert{max-width:1080px;margin:0 auto;background:var(--surface);border:1px solid var(--line);position:relative;padding:44px 28px 40px;border-radius:2px}
+.cert::before{content:"";position:absolute;inset:10px;border:1px solid var(--ochre);opacity:.55;pointer-events:none}
+.cert .from{color:var(--muted);font-size:.95rem;margin-bottom:22px}
+.cert h1{font-size:clamp(1.9rem,5.2vw,3.2rem);letter-spacing:-.01em;max-width:18ch}
+.cert .lead{font-family:"Gowun Batang",serif;font-size:1.15rem;line-height:1.9;color:var(--ink);max-width:36em;margin-top:22px}
+.seal{position:absolute;right:28px;bottom:28px;width:92px;height:92px;border-radius:50%;border:3px double var(--seal);color:var(--seal);
+  display:flex;align-items:center;justify-content:center;text-align:center;font-family:"Gowun Batang",serif;font-weight:700;font-size:.85rem;line-height:1.25;transform:rotate(-8deg);opacity:.9}
+@media(max-width:640px){.seal{position:static;margin-top:28px;transform:rotate(-6deg)}}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-block;padding:12px 20px;border-radius:6px;font-weight:600;text-decoration:none;border:1px solid var(--pine);font-size:.98rem;cursor:pointer;font-family:inherit}
+.btn.primary{background:var(--pine);color:var(--bg)}
+.btn.ghost{background:transparent;color:var(--pine)}
+.btn[aria-disabled="true"]{opacity:.6;cursor:not-allowed}
+
+/* blocks */
+.note{background:var(--mist);border-left:4px solid var(--sprout);padding:14px 18px;border-radius:0 6px 6px 0;margin:1.2rem 0;font-size:.97rem}
+.note.warn{border-left-color:var(--ochre)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;border:1px solid var(--line);border-radius:6px;background:var(--surface);margin:1.2rem 0}
+.facts div{padding:14px 18px;border-bottom:1px solid var(--line)}
+.facts dt{font-size:.85rem;color:var(--muted)}
+.facts dd{margin:2px 0 0;font-weight:600}
+dl{margin:0}
+.scroll{overflow-x:auto;margin:1.2rem 0;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.95rem}
+th,td{padding:11px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+thead th{background:var(--mist);color:var(--pine);font-weight:600}
+td.c,th.c{text-align:center}
+.yes{color:var(--sprout);font-weight:700}
+.no{color:var(--muted)}
+tbody tr:last-child td{border-bottom:0}
+
+/* steps (real sequence) */
+ol.steps{list-style:none;padding:0;margin:1.4rem 0;counter-reset:s}
+ol.steps li{counter-increment:s;position:relative;padding:0 0 22px 56px}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:38px;height:38px;border-radius:50%;background:var(--pine);color:var(--bg);display:flex;align-items:center;justify-content:center;font-weight:600}
+ol.steps li::after{content:"";position:absolute;left:18px;top:42px;bottom:4px;width:2px;background:var(--line)}
+ol.steps li:last-child::after{display:none}
+ol.steps strong{display:block;color:var(--pine);font-size:1.05rem}
+ol.steps span{color:var(--muted);font-size:.95rem}
+
+/* theme tabs */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:1.2rem 0 0}
+.tabs button{font:inherit;font-size:.95rem;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--pine);border-color:var(--pine);color:var(--bg)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:22px 24px;margin-top:14px}
+.panel h3{margin-top:0}
+.panel .sub{font-family:"Gowun Batang",serif;color:var(--ochre);font-size:1.05rem;margin-bottom:12px}
+.panel ul{padding-left:1.2rem;margin:.4rem 0 1rem}
+.sample{font-family:"Gowun Batang",serif;line-height:1.95;background:var(--bg);border-radius:4px;padding:16px 18px;margin-top:12px;font-size:1rem}
+.sample small{display:block;font-family:"IBM Plex Sans KR",sans-serif;color:var(--muted);font-size:.82rem;margin-bottom:6px}
+
+/* practice pad */
+.pad{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px;margin:1.2rem 0}
+.pad label{font-weight:600;display:block;margin-bottom:8px}
+.pad select{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);margin-bottom:12px;max-width:100%}
+.pad textarea{width:100%;min-height:280px;font-family:"Gowun Batang",serif;font-size:1.02rem;line-height:1.9;padding:14px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);resize:vertical}
+.meter{height:8px;background:var(--mist);border-radius:99px;overflow:hidden;margin:12px 0 6px}
+.meter i{display:block;height:100%;width:0;background:var(--sprout);transition:width .2s}
+.meter-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:.92rem;color:var(--muted)}
+.pad .tools{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.status{font-size:.9rem;color:var(--sprout);min-height:1.4em;margin-top:6px}
+
+.check{list-style:none;padding:0;margin:1rem 0}
+.check li{padding:6px 0 6px 30px;position:relative}
+.check li::before{content:"";position:absolute;left:0;top:12px;width:16px;height:16px;border:2px solid var(--sprout);border-radius:3px}
+
+details{background:var(--surface);border:1px solid var(--line);border-radius:6px;margin:10px 0;padding:0 18px}
+summary{cursor:pointer;padding:14px 0;font-weight:600;color:var(--pine)}
+details p{margin-bottom:14px}
+
+footer{margin-top:64px;padding:36px 20px 48px;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem}
+footer .in{max-width:1120px;margin:0 auto}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="cert">
+    <div class="from">일곡문화재단 · IIPCC 코리아 챕터 / 수혜 가이드북</div>
+    <h1>2026 미래 창업가 리더십 장학금</h1>
+    <p class="lead">장학금 수혜를 진심으로 축하합니다. 올해의 장학금은 통장에 들어오는 금액으로 끝나지 않습니다. 여러분이 지난 시간 동안 고민하고, 실패하고, 다시 시도했던 과정을 한 편의 글로 정리할 때 비로소 완성됩니다.</p>
+    <div class="cta-row">
+      <a class="btn primary" id="formBtn" href="#submit">제출 정보 확인하기</a>
+      <a class="btn ghost" href="#essay">소감문 작성 가이드 보기</a>
+    </div>
+    <div class="seal" aria-hidden="true">一谷<br>2026</div>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc" aria-label="목차">
+    <ol>
+      <li><a href="#meaning">장학금의 의미</a></li>
+      <li><a href="#overview">장학금 개요</a></li>
+      <li><a href="#who">누가 무엇을 내나요</a></li>
+      <li><a href="#process">진행 절차</a></li>
+      <li><a href="#submit">제출 정보 준비</a></li>
+      <li><a href="#essay">소감문 작성 가이드</a></li>
+      <li><a href="#privacy">개인정보와 유의사항</a></li>
+      <li><a href="#faq">자주 묻는 질문</a></li>
+      <li><a href="#contact">문의</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <section id="meaning">
+      <h2>이 장학금이 담고 있는 것</h2>
+      <p>일곡문화재단은 사업가 고(故) 최재선 선생이 평생 모은 사재를 출연해 1995년에 설립한 공익재단입니다. 청소년과 청년이 어려운 상황에 끊임없이 도전하고, 긍정적인 태도를 기르며, 타인을 배려하고 인간관계를 소중히 여기는 미래 인재로 성장하도록 돕는 것이 재단의 뜻입니다.</p>
+      <p>올해 장학금은 IIPCC(International Intellectual Property Commercialization Council) 코리아 챕터와 함께합니다. IIPCC는 지식재산(IP)을 이해하고 이를 실제 비즈니스로 연결하는 기업가정신을 키우는 글로벌 비영리 네트워크입니다. 두 기관은 창업 활동에서 성실성, 리더십, 소통 능력, 책임감, 봉사정신을 보여준 학생들의 다음 걸음을 응원하고자 합니다.</p>
+      <div class="note">재단이 바라는 것은 단 하나입니다. 여러분 개인의 성취가 다시 친구와 학교, 지역으로 돌아가는 선순환입니다. 소감문을 쓰고, 경험을 나누고, 후배에게 이야기해 주는 일이 바로 그 시작입니다.</div>
+    </section>
+
+    <section id="overview">
+      <h2>장학금 개요</h2>
+      <dl class="facts">
+        <div><dt>장학금 명칭</dt><dd>2026 미래 창업가 리더십 장학금</dd></div>
+        <div><dt>후원</dt><dd>일곡문화재단 · IIPCC 코리아 챕터<br>파주교육지원청 · 수원교육지원청 · 화성오산교육지원청 · 코리아스타트업포럼</dd></div>
+      </dl>
+      <h3>2026년 대상 프로그램</h3>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>프로그램</th><th>참여 학교 및 대상</th></tr></thead>
+          <tbody>
+            <tr><td>파주꿈함성공유학교 모의창업</td><td>파주고등학교</td></tr>
+            <tr><td>수원E:음공유학교 모의창업</td><td>정천중, 송린중, 수원고, 학교 밖 청소년</td></tr>
+            <tr><td>화성오산 글로벌 창업캠퍼스 모의창업</td><td>경기오산소프트웨어고, 정현고, 창의고</td></tr>
+            <tr><td>코리아스타트업포럼</td><td>별도 안내</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>장학금은 이렇게 쓰이길 바랍니다</h3>
+      <p>지식재산(IP) 관련 활동, 연구·개발(R&amp;D), 해외 교류(캠프, 경진대회, 전시, 학교·기관 방문 등)에 쓰이기를 권장합니다. 필요한 경우 학생 스스로 판단해 자율적으로 사용할 수 있습니다.</p>
+      <h3>선발 기준</h3>
+      <p>기본 자격은 출석률 80% 이상, 과제 제출률 70% 이상(트래커 업데이트 필수)입니다. 이 기준을 충족한 학생 가운데 각 프로그램의 지도교사 또는 코리아펜 심사를 거쳐 수혜자가 선정되었습니다.</p>
+    </section>
+
+    <section id="who">
+      <h2>누가 무엇을 내나요</h2>
+      <p>설문은 처음에 중고등학생과 대학생으로 나뉩니다. 대학생은 본인 계좌로 받으며, 학교·전공·학년과 지급 정보를 모두 직접 제출합니다. 중고등학생 중 개인 수상자는 모든 정보를 직접 제출합니다. 팀으로 수상한 경우 지급 정보(계좌 등)는 팀 대표가 제출하고, <strong>소감문은 팀원 모두가 각자 제출</strong>합니다. 함께 만든 결과인 만큼, 각자가 느낀 의미도 각자의 언어로 남겨 주세요. 대학생은 소감문 대신 추천서를 제출합니다.</p>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>제출 항목</th><th class="c">중고생 개인</th><th class="c">중고생 팀 대표</th><th class="c">중고생 팀원</th><th class="c">대학생</th></tr></thead>
+          <tbody>
+            <tr><td>기본 정보 (이름, 학교, 학년, 연락처, 팀명)</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c yes">✓ + 전공</td></tr>
+            <tr><td>지급 정보 (주소, 계좌, 예금주)</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c no">—</td><td class="c yes">✓ 본인 계좌</td></tr>
+            <tr><td>학부모 성명·연락처</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c no">—</td><td class="c no">—</td></tr>
+            <tr><td>예금주 주민등록번호 (본인 계좌면 본인, 학부모 계좌면 학부모)</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c no">—</td><td class="c yes">✓ 본인</td></tr>
+            <tr><td>팀원 명단</td><td class="c no">—</td><td class="c yes">✓</td><td class="c no">—</td><td class="c no">—</td></tr>
+            <tr><td>통장 사본 · 주민등록등본 (설문과 별도 제출)</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c no">—</td><td class="c yes">✓</td></tr>
+            <tr><td>장학금 수혜 소감문 (설문과 별도 제출)</td><td class="c yes">1,000~1,500자</td><td class="c yes">1,000~1,500자</td><td class="c yes">1,000~1,500자</td><td class="c no">—</td></tr>
+            <tr><td>추천서 (설문과 별도 제출)</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">✓</td></tr>
+            <tr><td>개인정보 수집·이용 동의</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note warn">만 14세 미만 학생은 법정대리인(보호자)의 동의가 반드시 필요합니다. 설문 제출 전 보호자와 함께 내용을 확인해 주세요.</div>
+    </section>
+
+    <section id="process">
+      <h2>진행 절차</h2>
+      <ol class="steps">
+        <li><strong>가이드북 읽기</strong><span>이 페이지를 끝까지 읽고 제출할 정보와 소감문 테마를 정합니다.</span></li>
+        <li><strong>소감문 초안 쓰기</strong><span>소감문 샘플을 참고해 초안을 쓰고 글자 수(1,000~1,500자)를 확인합니다. 보호자나 선생님께 한 번 읽어 달라고 부탁해 보세요.</span></li>
+        <li><strong>온라인 설문 제출</strong><span>기본 정보와 지급 정보(개인·대표·대학생)를 설문으로 제출합니다.</span></li>
+        <li><strong>서류 보내기</strong><span>중고생은 소감문을, 대학생은 추천서를 보냅니다. 개인·대표·대학생은 통장 사본과 주민등록등본도 함께 이메일 또는 카카오톡으로 보냅니다.</span></li>
+        <li><strong>서류 확인</strong><span>코리아펜이 제출 내용을 확인하고, 빠진 정보가 있으면 개별 연락드립니다.</span></li>
+        <li><strong>장학금 지급 및 시상</strong><span>재단에서 학생 또는 학부모 계좌로 지급합니다. 필요한 경우 학교 회계를 통해 지급될 수 있습니다.</span></li>
+        <li><strong>수령 확인과 나눔</strong><span>수령 확인에 응답하고, 기회가 되면 후배와 지역에 경험을 나눠 주세요.</span></li>
+      </ol>
+    </section>
+
+    <section id="submit">
+      <h2>제출 정보 미리 준비하기</h2>
+      <p>아래 항목을 미리 준비해 두면 설문은 5분 안에 끝낼 수 있습니다. 소감문과 서류는 설문과 별도로 보냅니다.</p>
+      <h3>모두 준비할 것</h3>
+      <ul class="check">
+        <li>학교명, 학년·반·번호, 본인 연락처와 이메일</li>
+        <li>참여 프로그램, 팀명, 수상명(상장에 적힌 이름)</li>
+        <li>완성된 소감문 파일 (중고생) 또는 추천서 (대학생), 별도 제출</li>
+      </ul>
+      <h3>개인 수혜자, 팀 대표, 대학생이 추가로 준비할 것</h3>
+      <ul class="check">
+        <li>장학금을 받을 계좌의 은행명, 계좌번호, 예금주</li>
+        <li>우편물을 받을 주소, 학부모 성명과 연락처</li>
+        <li>예금주의 주민등록번호 (본인 계좌면 본인, 학부모 계좌면 학부모)</li>
+        <li>팀 대표는 팀원 전원의 이름과 학교</li>
+        <li>대학생은 학교명, 전공, 학년, 본인 주민등록번호, 본인 명의 계좌 (학부모 정보는 필요 없음), 그리고 소감문 대신 추천서</li>
+      </ul>
+      <h3>수혜 유형별 제출물</h3>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>수혜 유형</th><th>온라인 설문</th><th>설문과 별도로 낼 서류</th></tr></thead>
+          <tbody>
+            <tr><td>중고생 개인 수혜자 · 팀 대표</td><td>기본 정보, 지급 정보</td><td>소감문, 통장 사본, 주민등록등본</td></tr>
+            <tr><td>대학생</td><td>기본 정보, 지급 정보</td><td>추천서, 통장 사본, 주민등록등본</td></tr>
+            <tr><td>중고생 팀원</td><td>기본 정보</td><td>소감문</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>통장 사본은 계좌번호와 예금주가 잘 보이게 찍거나 스캔해 주세요. 주민등록등본은 최근 3개월 이내 발급본이어야 하며, 정부24에서 무료로 발급받을 수 있습니다. 학부모 계좌로 받는 경우 학생과 학부모가 함께 나온 등본을 내 주세요.</p>
+      <div class="note">서류 파일은 <a href="mailto:mjkim@koreapen.org">mjkim@koreapen.org</a>로 보내거나, <a href="tel:01066157826">010-6615-7826</a> 카카오톡으로 보내 주세요. 파일 이름은 ‘학교명_이름_서류명’으로 해 주세요. (예: 파주고_홍길동_통장사본)</div>
+      <div class="cta-row"><a class="btn primary" id="formBtn2" href="#contact">온라인 설문 열기</a></div>
+    </section>
+
+    <section id="essay">
+      <h2>소감문 작성 가이드</h2>
+      <p>소감문은 프로그램 과정을 돌아보고 여러분의 성장을 기록하는 중요한 서류입니다. 동시에 나 자신에게 주는 선물이기도 합니다. 몇 주 동안 팀원과 부딪치며 아이디어를 다듬은 시간은 생각보다 금방 잊힙니다. 지금 글로 남겨 두면, 몇 년 뒤 진로를 고민할 때 다시 꺼내 볼 수 있는 기록이 됩니다.</p>
+
+      <h3>작성 규격</h3>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>구분</th><th>기준 (모든 수혜자 동일)</th></tr></thead>
+          <tbody>
+            <tr><td>분량</td><td>1,000~1,500자 (A4 1장 내외)</td></tr>
+            <tr><td>형식</td><td>자유 문서 형태, 4가지 테마 중 1가지 선택</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cta-row"><a class="btn ghost" href="https://drive.google.com/file/d/1T-M4jtaJnkBAfh7TUSj45UokMVZFBhas/view?usp=drive_link" target="_blank" rel="noopener">소감문 샘플 보기</a></div>
+
+      <h3>4가지 테마 중 하나를 고르세요</h3>
+      <div class="tabs" role="tablist" aria-label="소감문 테마">
+        <button role="tab" aria-selected="true" aria-controls="t1" id="tab1">테마 1 · 관점의 변화</button>
+        <button role="tab" aria-selected="false" aria-controls="t2" id="tab2" tabindex="-1">테마 2 · 역량의 발견</button>
+        <button role="tab" aria-selected="false" aria-controls="t3" id="tab3" tabindex="-1">테마 3 · 진로의 탐색</button>
+        <button role="tab" aria-selected="false" aria-controls="t4" id="tab4" tabindex="-1">테마 4 · 성장의 기록</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="t1" aria-labelledby="tab1">
+        <h3>“생각의 틀을 깨다”</h3>
+        <div class="sub">프로그램 전과 후, 세상과 문제를 바라보는 눈이 어떻게 달라졌나요?</div>
+        <ul>
+          <li>이 프로그램을 통해 내가 가장 달라진 점은 무엇인가요?</li>
+          <li>“이전에는 …라고 생각했지만, 이제는 …라고 생각한다.”라는 문장을 꼭 넣어 변화를 설명해 주세요.</li>
+          <li>이번 프로그램이 가르쳐 준 인생의 교훈을 한 문장으로 정리한다면?</li>
+        </ul>
+        <div class="sample"><small>참고 예시 (그대로 옮기지 말고 흐름만 참고하세요)</small>처음 아이디어를 낼 때 나는 ‘좋은 제품’이 곧 ‘팔리는 제품’이라고 믿었다. 그런데 반려동물 보호자 열 명을 인터뷰하고 나서 생각이 바뀌었다. 그들이 원한 것은 더 똑똑한 기계가 아니라 외출할 때 덜 불안한 마음이었다. 이전에는 기술이 문제를 해결한다고 생각했지만, 이제는 사람의 마음을 먼저 이해해야 기술이 쓸모를 갖는다고 생각한다.</div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="t2" aria-labelledby="tab2" hidden>
+        <h3>“내 안의 잠재력을 깨우다”</h3>
+        <div class="sub">실전 문제를 해결하며 새롭게 발견한 나의 강점은 무엇인가요?</div>
+        <ul>
+          <li>문제를 해결하면서 가장 중요하다고 느낀 점은 무엇이었나요?</li>
+          <li>스스로 발견한 ‘내 안의 새로운 능력’은 무엇인가요?</li>
+          <li>앞으로 이 능력을 활용해 어떤 도전이나 변화를 시도해 보고 싶나요?</li>
+        </ul>
+        <div class="sample"><small>참고 예시</small>발표 전날, 우리 팀의 수익 구조가 맞지 않는다는 것을 발견했다. 모두 지쳐 있었지만 나는 엑셀을 열고 숫자를 하나씩 다시 맞췄다. 그때 알았다. 나는 앞에 나서서 말하는 사람은 아니지만, 모두가 놓친 빈틈을 끝까지 붙잡는 사람이라는 것을.</div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="t3" aria-labelledby="tab3" hidden>
+        <h3>“미래의 지도를 그리다”</h3>
+        <div class="sub">창업 경험이 여러분의 직업관과 꿈에 어떤 영향을 주었나요?</div>
+        <ul>
+          <li>창업을 통해 배운 진로와 직업의 의미는 무엇인가요?</li>
+          <li>이 경험으로 새롭게 생긴 꿈이나 구체적인 목표가 있나요?</li>
+          <li>이번 경험이 준 가르침을 한 문장으로 요약해 주세요.</li>
+        </ul>
+        <div class="sample"><small>참고 예시</small>나는 막연히 ‘개발자가 되고 싶다’고만 말해 왔다. 앱을 기획하며 고객 인터뷰, 가격 정하기, 발표까지 해 보니 코드를 짜는 일은 전체 과정의 한 조각이었다. 이제 나의 목표는 조금 더 구체적이다. 사람들이 실제로 겪는 불편을 먼저 찾아내고, 그 해결책을 직접 만들 수 있는 사람이 되는 것이다.</div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="t4" aria-labelledby="tab4" hidden>
+        <h3>“5년 뒤의 나에게 보내는 편지”</h3>
+        <div class="sub">지금의 성취를 바탕으로 미래의 나를 그려 보세요.</div>
+        <ul>
+          <li>5년 뒤의 나에게 지금의 경험에 대해 어떤 말을 해 주고 싶나요?</li>
+          <li>이 프로그램에서 얻은 교훈과 새롭게 생긴 목표를 편지에 담아 주세요.</li>
+          <li>앞으로 어떤 변화를 시도하는 사람이 되고 싶은지 적어 주세요.</li>
+        </ul>
+        <div class="sample"><small>참고 예시</small>5년 뒤의 나에게. 지금 너는 아마 대학 생활이나 첫 일에 정신없겠지. 열여섯 살의 나는 처음으로 ‘우리 팀’이라는 말이 얼마나 무거운지 배웠어. 의견이 갈려 사흘 동안 말도 안 하던 친구와 결국 같은 발표 자료를 만들었던 그 밤을 잊지 마.</div>
+      </div>
+
+      <h3>좋은 소감문의 뼈대</h3>
+      <ol class="steps">
+        <li><strong>시작: 한 장면으로 열기</strong><span>“처음 팀 회의에서…”처럼 구체적인 순간으로 시작하면 글이 살아납니다.</span></li>
+        <li><strong>전개: 부딪힘과 시도</strong><span>무엇이 어려웠고, 무엇을 해 보았는지 씁니다. 실패한 시도도 좋은 재료입니다.</span></li>
+        <li><strong>전환: 깨달음</strong><span>그 과정에서 내 생각이나 내 모습의 무엇이 달라졌는지 씁니다.</span></li>
+        <li><strong>마무리: 앞으로</strong><span>장학금을 어디에 쓰고 싶은지, 어떤 사람이 되고 싶은지로 맺습니다.</span></li>
+      </ol>
+
+      <h3>제출 전 스스로 점검하기</h3>
+      <ul class="check">
+        <li>질문에 대한 답을 나열하지 않고, 하나의 흐름이 있는 글로 썼나요?</li>
+        <li>팀명, 아이템, 고객 등 내 활동만의 구체적인 내용이 들어 있나요?</li>
+        <li>다른 사람의 글이나 AI가 쓴 문장을 그대로 옮기지 않았나요?</li>
+        <li>후원해 준 재단과 함께한 사람들에게 전하고 싶은 말이 있나요?</li>
+      </ul>
+    </section>
+
+    <section id="privacy">
+      <h2>개인정보와 유의사항</h2>
+      <p>제출한 개인정보는 장학금 지급, 수혜자 확인, 증빙 서류 작성 목적에만 사용되며, 목적 달성 후 관련 규정에 따라 안전하게 파기됩니다.</p>
+      <ul class="check">
+        <li>계좌번호와 예금주는 반드시 통장 사본과 일치하게 적어 주세요. 한 글자만 달라도 지급이 늦어집니다.</li>
+        <li>학부모 계좌로 받는 경우 예금주는 학부모 성명과 같아야 합니다.</li>
+        <li>주민등록번호는 장학금 지급 처리에만 쓰이며, 처리가 끝나면 파기됩니다.</li>
+        <li>제출한 소감문은 재단의 성과 보고와 홍보 자료에 이름을 가린 채 일부 인용될 수 있습니다. 원하지 않으면 설문에서 선택할 수 있습니다.</li>
+        <li>정보를 잘못 냈다면 설문을 다시 제출하지 말고 김민정 대표에게 연락해 주세요.</li>
+      </ul>
+    </section>
+
+    <section id="faq">
+      <h2>자주 묻는 질문</h2>
+      <details><summary>팀원인데 장학금은 대표 계좌로 한꺼번에 들어가나요?</summary><p>지급 방식은 프로그램별로 다를 수 있습니다. 대표가 제출한 정보를 기준으로 코리아펜이 확인 후 개별 안내드립니다. 팀원도 소감문은 반드시 각자 제출해야 합니다.</p></details>
+      <details><summary>제 이름의 통장이 없어요.</summary><p>학부모 계좌로 받을 수 있습니다. 설문에서 ‘학부모 계좌’를 선택하고 학부모 주민등록번호와 학부모 명의 계좌 정보를 적어 주세요.</p></details>
+      <details><summary>학교 밖 청소년도 같은 절차인가요?</summary><p>네, 같습니다. 학교명 대신 ‘학교 밖 청소년’을 선택해 주세요.</p></details>
+      <details><summary>소감문은 어떤 형식으로 써야 하나요?</summary><p>형식은 자유입니다. 1,000~1,500자 분량으로 쓰고, 완성한 파일을 이메일 또는 카카오톡으로 보내 주세요. 소감문 샘플을 참고하면 도움이 됩니다.</p></details>
+      <details><summary>장학금은 꼭 정해진 곳에만 써야 하나요?</summary><p>IP 활동, R&amp;D, 해외 교류에 쓰기를 권장하지만, 필요한 경우 스스로 판단해 사용할 수 있습니다. 어떻게 썼는지 나중에 짧게 공유해 주면 재단에 큰 힘이 됩니다.</p></details>
+    </section>
+
+    <section id="contact">
+      <h2>문의</h2>
+      <p>IIPCC 코리아 챕터 이사 김민정<br>
+      전화 <a href="tel:01066157826">010-6615-7826</a> · 이메일 <a href="mailto:mjkim@koreapen.org">mjkim@koreapen.org</a></p>
+      <div class="cta-row"><a class="btn primary" id="formBtn3" href="#contact" aria-disabled="true">온라인 설문 (링크 준비 중)</a></div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="in">2026 미래 창업가 리더십 장학금 수혜 가이드북 / 일곡문화재단 · IIPCC 코리아 챕터</div>
+</footer>
+
+<script>
+// 설문 링크가 준비되면 아래 주소만 바꾸면 됩니다.
+const FORM_URL = "";
+if (FORM_URL) {
+  ["formBtn2","formBtn3"].forEach(id => {
+    const b = document.getElementById(id);
+    b.href = FORM_URL; b.target = "_blank"; b.rel = "noopener";
+    b.removeAttribute("aria-disabled"); b.textContent = "온라인 설문 열기";
+  });
+}
+
+// tabs
+const tabs = [...document.querySelectorAll('[role="tab"]')];
+function select(t){
+  tabs.forEach(x => {
+    const on = x === t;
+    x.setAttribute("aria-selected", on); x.tabIndex = on ? 0 : -1;
+    document.getElementById(x.getAttribute("aria-controls")).hidden = !on;
+  });
+}
+tabs.forEach((t,i) => {
+  t.addEventListener("click", () => select(t));
+  t.addEventListener("keydown", e => {
+    if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+      const n = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+      select(n); n.focus();
+    }
+  });
+});
+
+// toc highlight
+const links = [...document.querySelectorAll("nav.toc a")];
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) links.forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id));
+  }), {rootMargin: "-30% 0px -60% 0px"});
+  document.querySelectorAll("main section").forEach(s => io.observe(s));
+}
+</script>
+</body>
+</html>
