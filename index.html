@@ -134,17 +134,26 @@ details p{margin-bottom:14px}
 
 footer{margin-top:64px;padding:36px 20px 48px;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem}
 footer .in{max-width:1120px;margin:0 auto}
+.lang-switch{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);right:12px;z-index:20;display:flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.lang-switch button{font:inherit;font-size:.88rem;border:0;background:transparent;color:var(--ink);padding:6px 12px;border-radius:999px;cursor:pointer}
+.lang-switch button[aria-pressed="true"]{background:var(--pine);color:var(--bg)}
+[hidden]{display:none !important}
+td small{display:block;color:var(--muted);font-size:.88rem;margin-top:4px}
 </style>
 </head>
 <body>
-
+<div class="lang-switch" role="group" aria-label="Language / 언어">
+  <button type="button" data-set-lang="ko" lang="ko">한국어</button>
+  <button type="button" data-set-lang="en" lang="en">English</button>
+</div>
+<div class="lang-block" data-lang="ko" lang="ko">
 <header class="hero">
   <div class="cert">
     <div class="from">장학금 수혜 가이드북</div>
     <h1>2026 미래 창업가 리더십 장학금</h1>
     <p class="lead">장학금 수혜를 진심으로 축하합니다. 이 장학금은 지금까지의 노력에 대한 격려이자, 앞으로의 성장을 위한 출발점입니다. 지난 시간 동안 고민하고, 실패하고, 다시 도전했던 과정을 돌아보며 그 경험을 더 큰 성장으로 이어 가기를 바랍니다.</p>
     <div class="cta-row">
-      <a class="btn primary" id="formBtn" href="#submit">제출 정보 확인하기</a>
+      <a class="btn primary" href="#submit">제출 정보 확인하기</a>
       <a class="btn ghost" href="#essay">소감문 작성 가이드 보기</a>
     </div>
   </div>
@@ -179,30 +188,28 @@ footer .in{max-width:1120px;margin:0 auto}
         <div><dt>장학금 명칭</dt><dd>2026 미래 창업가 리더십 장학금</dd></div>
         <div><dt>후원</dt><dd>일곡문화재단<br>파주교육지원청 · 수원교육지원청 · 화성오산교육지원청 · 코리아스타트업포럼</dd></div>
       </dl>
-      <h3>2026년 대상 프로그램</h3>
+      <h3>2026년 장학금 대상</h3>
       <div class="scroll">
         <table>
-          <thead><tr><th>프로그램</th><th>장학금 수혜 학교 및 대상</th></tr></thead>
+          <thead><tr><th>대상</th><th>장학금 수혜 학교 및 대상</th></tr></thead>
           <tbody>
-            <tr><td>파주꿈함성공유학교 모의창업</td><td>파주고등학교</td></tr>
-            <tr><td>수원E:음공유학교 모의창업</td><td>정천중, 송린중, 수원고, 학교 밖 청소년</td></tr>
-            <tr><td>화성오산 글로벌 창업캠퍼스 모의창업</td><td>경기오산소프트웨어고, 정현고, 창의고</td></tr>
-            <tr><td>코리아스타트업포럼</td><td>별도 안내</td></tr>
+            <tr><td>중고등학생</td><td>경기도 내 공유학교와 창업캠퍼스의 모의창업 프로그램(파주꿈함성공유학교, 수원E:음공유학교, 화성오산 글로벌 창업캠퍼스)에 참여한 중고등학생<br><small>파주고, 정천중, 송린중, 수원고, 경기오산소프트웨어고, 정현고, 창의고, 학교 밖 청소년</small></td></tr>
+            <tr><td>대학생 · 대학원생</td><td>코리아스타트업포럼 프로젝트와 모의창업 과정에서 리더십을 보여 준 대학생 · 대학원생</td></tr>
           </tbody>
         </table>
       </div>
       <h3>장학금은 이렇게 쓰이길 바랍니다</h3>
       <p>지식재산(IP) 관련 활동, 연구·개발(R&amp;D), 해외 교류(캠프, 경진대회, 전시, 학교·기관 방문 등)에 쓰이기를 권장합니다. 필요한 경우 학생 스스로 판단해 자율적으로 사용할 수 있습니다.</p>
       <h3>선발 기준</h3>
-      <p>기본 자격은 출석률 80% 이상, 과제 제출률 80% 이상입니다. 이 기준을 충족한 학생 가운데 각 프로그램의 담당 코치 및 내부 심사를 거쳐 수혜자가 선정되었습니다.</p>
+      <p>기본 자격은 창업 관련 프로젝트에서 보여 준 성실함과 책임감입니다. 이 기준을 충족한 학생 가운데 각 프로그램 담당 코치의 평가와 내부 심사를 거쳐 수혜자를 선정했습니다.</p>
     </section>
 
     <section id="who">
       <h2>무엇을 제출해야 하나요</h2>
-      <p>수혜자는 중고등학생과 대학생 그룹으로 나뉩니다. 중고등학생은 기본 정보와 지급 정보 외에 성장 소감문을 제출합니다. 대학생은 학교·전공·학년과 지급 정보, 그리고 추천서를 제출합니다.</p>
+      <p>수혜자는 중고등학생과 대학생 · 대학원생 그룹으로 나뉩니다. 중고등학생은 기본 정보와 지급 정보 외에 성장 소감문을 제출합니다. 대학생 · 대학원생은 학교·전공·학년과 지급 정보, 그리고 추천서를 제출합니다.</p>
       <div class="scroll">
         <table>
-          <thead><tr><th>제출 항목</th><th class="c">중고등학생</th><th class="c">대학생</th></tr></thead>
+          <thead><tr><th>제출 항목</th><th class="c">중고등학생</th><th class="c">대학생 · 대학원생</th></tr></thead>
           <tbody>
             <tr><td>기본 정보 (이름, 학교, 학년, 연락처, 팀명)</td><td class="c yes">✓</td><td class="c yes">✓ + 전공</td></tr>
             <tr><td>지급 정보 (주소, 계좌, 예금주)</td><td class="c yes">✓</td><td class="c yes">✓ 본인 계좌</td></tr>
@@ -215,6 +222,7 @@ footer .in{max-width:1120px;margin:0 auto}
           </tbody>
         </table>
       </div>
+      <div class="note"><strong>외국인 대학생 · 대학원생:</strong> 주민등록번호 대신 외국인등록번호(없으면 여권번호)를, 주민등록등본 대신 외국인등록증 또는 여권 사본을 제출합니다. 국내 은행 계좌가 없다면 제출 전에 먼저 연락해 주세요.</div>
       <div class="note warn">만 14세 미만 학생은 법정대리인(보호자)의 동의가 반드시 필요합니다. 설문 제출 전 보호자와 함께 내용을 확인해 주세요.</div>
     </section>
 
@@ -223,8 +231,8 @@ footer .in{max-width:1120px;margin:0 auto}
       <ol class="steps">
         <li><strong>가이드북 읽기</strong><span>이 페이지를 끝까지 읽고 제출할 정보와 소감문 테마를 정합니다.</span></li>
         <li><strong>소감문 초안 쓰기</strong><span>소감문 샘플을 참고해 초안을 쓰고 글자 수(1,000~1,500자)를 확인합니다. 보호자나 선생님께 한 번 읽어 달라고 부탁해 보세요.</span></li>
-        <li><strong>온라인 설문 제출</strong><span>기본 정보와 지급 정보(개인·대표·대학생)를 설문으로 제출합니다.</span></li>
-        <li><strong>서류 보내기</strong><span>중고생은 소감문을, 대학생은 추천서를 보냅니다. 개인·대표·대학생은 통장 사본과 주민등록등본도 함께 이메일 또는 카카오톡으로 보냅니다.</span></li>
+        <li><strong>온라인 설문 제출</strong><span>기본 정보와 지급 정보를 설문으로 제출합니다.</span></li>
+        <li><strong>서류 보내기</strong><span>중고생은 소감문을, 대학생 · 대학원생은 추천서를 보냅니다. 모두 통장 사본과 주민등록등본도 함께 이메일 또는 카카오톡으로 보냅니다.</span></li>
         <li><strong>서류 확인</strong><span>코리아펜이 제출 내용을 확인하고, 빠진 정보가 있으면 개별 연락드립니다.</span></li>
         <li><strong>장학금 지급 및 시상</strong><span>재단에서 학생 또는 학부모 계좌로 지급합니다. 필요한 경우 학교 회계를 통해 지급될 수 있습니다.</span></li>
         <li><strong>수령 확인과 나눔</strong><span>수령 확인에 응답하고, 기회가 되면 후배와 지역에 경험을 나눠 주세요.</span></li>
@@ -238,14 +246,15 @@ footer .in{max-width:1120px;margin:0 auto}
       <ul class="check">
         <li>학교명, 학년·반·번호, 본인 연락처와 이메일</li>
         <li>참여 프로그램, 팀명</li>
-        <li>완성된 소감문 파일 (중고생) 또는 추천서 (대학생), 별도 제출</li>
+        <li>완성된 소감문 파일 (중고생) 또는 추천서 (대학생 · 대학원생), 별도 제출</li>
       </ul>
       <h3>지급을 위해 준비할 것</h3>
       <ul class="check">
         <li>장학금을 받을 계좌의 은행명, 계좌번호, 예금주</li>
         <li>우편물을 받을 주소, 학부모 성명과 연락처</li>
         <li>예금주의 주민등록번호 (본인 계좌면 본인, 학부모 계좌면 학부모)</li>
-        <li>대학생은 학교명, 전공, 학년, 본인 주민등록번호, 본인 명의 계좌, 그리고 소감문 대신 추천서</li>
+        <li>대학생 · 대학원생은 학교명, 전공, 학년, 본인 주민등록번호, 본인 명의 계좌, 그리고 소감문 대신 추천서</li>
+        <li>외국인 대학생 · 대학원생은 주민등록번호 대신 외국인등록번호(없으면 여권번호), 주민등록등본 대신 외국인등록증 또는 여권 사본</li>
       </ul>
       <h3>그룹별 제출물</h3>
       <div class="scroll">
@@ -253,13 +262,14 @@ footer .in{max-width:1120px;margin:0 auto}
           <thead><tr><th>그룹</th><th>온라인 설문</th><th>설문과 별도로 낼 서류</th></tr></thead>
           <tbody>
             <tr><td>중고등학생</td><td>기본 정보, 지급 정보</td><td>성장 소감문, 통장 사본, 주민등록등본</td></tr>
-            <tr><td>대학생</td><td>기본 정보, 지급 정보</td><td>추천서, 통장 사본, 주민등록등본</td></tr>
+            <tr><td>대학생 · 대학원생</td><td>기본 정보, 지급 정보</td><td>추천서, 통장 사본, 주민등록등본</td></tr>
+            <tr><td>외국인 대학생 · 대학원생</td><td>기본 정보, 지급 정보</td><td>추천서, 통장 사본, 외국인등록증 또는 여권 사본</td></tr>
           </tbody>
         </table>
       </div>
       <p>통장 사본은 계좌번호와 예금주가 잘 보이게 찍거나 스캔해 주세요. 주민등록등본은 최근 3개월 이내 발급본이어야 하며, 정부24에서 무료로 발급받을 수 있습니다. 학부모 계좌로 받는 경우 학생과 학부모가 함께 나온 등본을 내 주세요.</p>
       <div class="note">서류 파일은 <a href="mailto:mjkim@koreapen.org">mjkim@koreapen.org</a>로 보내거나, <a href="tel:01066157826">010-6615-7826</a> 카카오톡으로 보내 주세요. 파일 이름은 ‘학교명_이름_서류명’으로 해 주세요. (예: 파주고_홍길동_통장사본)</div>
-      <div class="cta-row"><a class="btn primary" id="formBtn2" href="#contact">온라인 설문 열기</a></div>
+      <div class="cta-row"><a class="btn primary" href="https://forms.gle/vxg2UP4HngH7wPkd7" target="_blank" rel="noopener">온라인 설문 열기</a></div>
     </section>
 
     <section id="essay">
@@ -277,7 +287,7 @@ footer .in{max-width:1120px;margin:0 auto}
         </table>
       </div>
 
-      <div class="cta-row"><a class="btn ghost" href="https://drive.google.com/file/d/1T-M4jtaJnkBAfh7TUSj45UokMVZFBhas/view?usp=drive_link" target="_blank" rel="noopener">소감문 샘플 보기</a></div>
+      <div class="cta-row"><a class="btn ghost" href="https://drive.google.com/file/d/1oLjE_aGm0W5x0eKsbvHPM4hVYW0sXqC7/view?usp=sharing" target="_blank" rel="noopener">소감문 샘플 보기</a></div>
 
       <h3>4가지 테마 중 하나를 고르세요</h3>
       <div class="tabs" role="tablist" aria-label="소감문 테마">
@@ -363,6 +373,7 @@ footer .in{max-width:1120px;margin:0 auto}
     <section id="faq">
       <h2>자주 묻는 질문</h2>
       <details><summary>제 이름의 통장이 없어요.</summary><p>학부모 계좌로 받을 수 있습니다. 설문에서 ‘학부모 계좌’를 선택하고 학부모 주민등록번호와 학부모 명의 계좌 정보를 적어 주세요.</p></details>
+      <details><summary>외국인 학생인데 국내 은행 계좌가 없어요.</summary><p>설문 제출 전에 먼저 연락해 주세요. 지급 방법을 따로 안내해 드립니다.</p></details>
       <details><summary>학교 밖 청소년도 같은 절차인가요?</summary><p>네, 같습니다. 학교명 대신 ‘학교 밖 청소년’을 선택해 주세요.</p></details>
       <details><summary>소감문은 어떤 형식으로 써야 하나요?</summary><p>형식은 자유입니다. 1,000~1,500자 분량으로 쓰고, 완성한 파일을 이메일 또는 카카오톡으로 보내 주세요. 소감문 샘플을 참고하면 도움이 됩니다.</p></details>
       <details><summary>장학금은 꼭 정해진 곳에만 써야 하나요?</summary><p>IP 활동, R&amp;D, 해외 교류에 쓰기를 권장하지만, 필요한 경우 스스로 판단해 사용할 수 있습니다. 어떻게 썼는지 나중에 짧게 공유해 주면 재단에 큰 힘이 됩니다.</p></details>
@@ -372,7 +383,7 @@ footer .in{max-width:1120px;margin:0 auto}
       <h2>문의</h2>
       <p>코리아펜(펜월드와이드협회 한국본부) 김민정 대표<br>
       전화 <a href="tel:01066157826">010-6615-7826</a> · 이메일 <a href="mailto:mjkim@koreapen.org">mjkim@koreapen.org</a></p>
-      <div class="cta-row"><a class="btn primary" id="formBtn3" href="#contact" aria-disabled="true">온라인 설문 (링크 준비 중)</a></div>
+      <div class="cta-row"><a class="btn primary" href="https://forms.gle/vxg2UP4HngH7wPkd7" target="_blank" rel="noopener">온라인 설문 열기</a></div>
     </section>
   </main>
 </div>
@@ -380,40 +391,296 @@ footer .in{max-width:1120px;margin:0 auto}
 <footer>
   <div class="in">2026 미래 창업가 리더십 장학금 수혜 가이드북 / 일곡문화재단</div>
 </footer>
+</div>
+<div class="lang-block" data-lang="en" lang="en" hidden>
+<header class="hero">
+  <div class="cert">
+    <div class="from">Scholarship Recipient Guide</div>
+    <h1>2026 Future Entrepreneur Leadership Scholarship</h1>
+    <p class="lead">Congratulations on receiving this scholarship! It recognizes the hard work you’ve already put in, and it marks the start of what comes next. Take a moment to look back on the problems you wrestled with, the setbacks you faced, and the times you tried again — and let that experience carry you toward even greater growth.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="#submit-en">See what to prepare</a>
+      <a class="btn ghost" href="#essay-en">Essay guide</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc" aria-label="Contents">
+    <ol>
+      <li><a href="#meaning-en">About the scholarship</a></li>
+      <li><a href="#overview-en">Overview</a></li>
+      <li><a href="#who-en">What to submit</a></li>
+      <li><a href="#process-en">How it works</a></li>
+      <li><a href="#submit-en">What to prepare</a></li>
+      <li><a href="#essay-en">Essay guide</a></li>
+      <li><a href="#privacy-en">Privacy and important notes</a></li>
+      <li><a href="#faq-en">FAQ</a></li>
+      <li><a href="#contact-en">Contact</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <section id="meaning-en">
+      <h2>What this scholarship is about</h2>
+      <p>The ILGOK Foundation is a nonprofit established in 1995. Its mission is to help young people grow into future leaders who embrace challenges, stay positive, care about others, and value the relationships in their lives.</p>
+      <p>This year’s scholarship supports the next step for students who showed diligence, leadership, strong communication, responsibility, and a spirit of service through their entrepreneurship projects.</p>
+      <div class="note">The Foundation hopes for just one thing: that your success comes full circle and gives back to your friends, your school, and your community.</div>
+    </section>
+
+    <section id="overview-en">
+      <h2>Overview</h2>
+      <dl class="facts">
+        <div><dt>Scholarship</dt><dd>2026 Future Entrepreneur Leadership Scholarship</dd></div>
+        <div><dt>Sponsors</dt><dd>ILGOK Foundation<br>Paju, Suwon, and Hwaseong-Osan Offices of Education · Korea Startup Forum</dd></div>
+      </dl>
+      <h3>2026 recipients</h3>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Group</th><th>Recipient schools and groups</th></tr></thead>
+          <tbody>
+            <tr><td>Middle and high school students</td><td>Students who took part in Echo Startup Programs at shared schools and startup campuses in Gyeonggi Province (Paju Shared School, Suwon Shared School, and Hwaseong-Osan Global Startup Campus)<br><small>Paju High School, Jeongcheon Middle School, Songrin Middle School, Suwon High School, Gyeonggi Osan Software High School, Jeonghyeon High School, Changui High School, and out-of-school youth</small></td></tr>
+            <tr><td>University and graduate students</td><td>Students who demonstrated leadership in Korea Startup Forum projects and startup programs</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>How we hope you’ll use it</h3>
+      <p>We encourage you to put the scholarship toward intellectual property (IP) projects, research and development (R&amp;D), or international exchange — camps, competitions, exhibitions, and visits to schools or organizations abroad. That said, you’re free to use it however you think will help you most.</p>
+      <h3>Eligibility</h3>
+      <p>Recipients were required to have shown diligence and responsibility in a startup-related project. From among the students who met this standard, recipients were selected based on evaluations by each program’s coaches and an internal review.</p>
+    </section>
+
+    <section id="who-en">
+      <h2>What to submit</h2>
+      <p>Recipients fall into two groups: middle and high school students, and university and graduate students. Middle and high school students submit their basic and banking information along with a reflection essay. University and graduate students submit their school, major, year, and banking information along with a letter of recommendation.</p>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Item</th><th class="c">Middle / high school</th><th class="c">University / graduate</th></tr></thead>
+          <tbody>
+            <tr><td>Basic information (name, school, grade, contact details, team name)</td><td class="c yes">✓</td><td class="c yes">✓ + major</td></tr>
+            <tr><td>Banking information (address, bank account, account holder)</td><td class="c yes">✓</td><td class="c yes">✓ your own account</td></tr>
+            <tr><td>Parent’s name and phone number</td><td class="c yes">✓</td><td class="c no">—</td></tr>
+            <tr><td>Account holder’s ID number</td><td class="c yes">✓ yours or your parent’s</td><td class="c yes">✓ yours</td></tr>
+            <tr><td>Copy of bankbook and proof of identity (sent separately)</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+            <tr><td>Reflection essay (sent separately)</td><td class="c yes">1,000–1,500 characters</td><td class="c no">—</td></tr>
+            <tr><td>Letter of recommendation (sent separately)</td><td class="c no">—</td><td class="c yes">✓</td></tr>
+            <tr><td>Consent to the collection and use of personal information</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note"><strong>International university and graduate students:</strong> Use your Alien Registration Number in place of a Korean resident registration number (or your passport number if you don’t have one). Instead of a Certificate of Resident Registration, send a copy of your Alien Registration Card or passport. If you don’t have a Korean bank account, please get in touch with us before you submit.</div>
+      <div class="note warn">Students under 14 need consent from a parent or legal guardian. Please go through the form together before submitting it.</div>
+    </section>
+
+    <section id="process-en">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><strong>Read this guide</strong><span>Go through the whole page so you know exactly what to submit. Middle and high school students should also pick an essay theme.</span></li>
+        <li><strong>Write your essay or request a recommendation</strong><span>Middle and high school students draft their essay, using the sample for reference, and check the length (1,000–1,500 characters). University and graduate students ask a professor or advisor for a letter of recommendation.</span></li>
+        <li><strong>Fill out the online form</strong><span>Submit your basic and banking information through the online form.</span></li>
+        <li><strong>Send your documents</strong><span>Middle and high school students send their essay; university and graduate students send their letter of recommendation. Everyone also sends a copy of their bankbook and proof of identity by email or KakaoTalk.</span></li>
+        <li><strong>Review</strong><span>KoreaPEN will review everything you’ve sent and contact you directly if anything is missing.</span></li>
+        <li><strong>Scholarship disbursement</strong><span>The Foundation will deposit the scholarship into your account or your parent’s account. In some cases, it may be disbursed through your school.</span></li>
+        <li><strong>Confirm and pay it forward</strong><span>Let us know once you’ve received the scholarship — and whenever you get the chance, share what you’ve learned with younger students and your community.</span></li>
+      </ol>
+    </section>
+
+    <section id="submit-en">
+      <h2>What to prepare</h2>
+      <p>If you have the items below ready, the online form only takes about five minutes. Your essay or recommendation letter and other documents are sent separately.</p>
+      <h3>Everyone</h3>
+      <ul class="check">
+        <li>School name, grade, class and student number, phone number, and email address</li>
+        <li>Program name and team name</li>
+        <li>Your finished essay (middle and high school) or letter of recommendation (university and graduate), sent separately</li>
+      </ul>
+      <h3>For disbursement</h3>
+      <ul class="check">
+        <li>The bank name, account number, and account holder for the account receiving the scholarship</li>
+        <li>Your mailing address, plus your parent’s name and phone number (middle and high school students)</li>
+        <li>The account holder’s ID number (yours if it’s your account, your parent’s if it’s theirs)</li>
+        <li>University and graduate students: your school name, major, year, your own ID number, an account in your own name, and a letter of recommendation in place of an essay</li>
+      </ul>
+      <h3>Documents by group</h3>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Group</th><th>Online form</th><th>Documents sent separately</th></tr></thead>
+          <tbody>
+            <tr><td>Middle / high school</td><td>Basic and banking information</td><td>Reflection essay, copy of bankbook, Certificate of Resident Registration</td></tr>
+            <tr><td>University / graduate (Korean students)</td><td>Basic and banking information</td><td>Letter of recommendation, copy of bankbook, Certificate of Resident Registration</td></tr>
+            <tr><td>University / graduate (international students)</td><td>Basic and banking information</td><td>Letter of recommendation, copy of bankbook, copy of Alien Registration Card or passport</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Please take a clear photo or scan of your bankbook so the account number and account holder’s name are easy to read. The Certificate of Resident Registration must be issued within the last three months. If the scholarship is going to a parent’s account, the certificate must list both the student and the parent.</p>
+      <div class="note">Email your files to <a href="mailto:mjkim@koreapen.org">mjkim@koreapen.org</a> or send them via KakaoTalk to <a href="tel:01066157826">010-6615-7826</a>. Please name each file School_Name_Document (e.g., SNU_JohnSmith_Recommendation).</div>
+      <p>The online form is in Korean. If any question is unclear, just reach out and we’ll be happy to help.</p>
+      <div class="cta-row"><a class="btn primary" href="https://forms.gle/vxg2UP4HngH7wPkd7" target="_blank" rel="noopener">Open the online form</a></div>
+    </section>
+
+    <section id="essay-en">
+      <h2>Essay guide</h2>
+      <p>This section is for middle and high school recipients. Your reflection essay is an important record of the program and of how you’ve grown. It’s also a gift to yourself. The weeks you spent hashing out ideas with your teammates will fade faster than you think. Writing about them now gives you something to come back to years from now, when you’re figuring out your next step.</p>
+
+      <h3>Requirements</h3>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Item</th><th>Requirement (same for everyone)</th></tr></thead>
+          <tbody>
+            <tr><td>Length</td><td>1,000–1,500 Korean characters (about one A4 page)</td></tr>
+            <tr><td>Format</td><td>Any format; choose one of the four themes</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cta-row"><a class="btn ghost" href="https://drive.google.com/file/d/1oLjE_aGm0W5x0eKsbvHPM4hVYW0sXqC7/view?usp=sharing" target="_blank" rel="noopener">View a sample essay</a></div>
+
+      <h3>Pick one of four themes</h3>
+      <div class="tabs" role="tablist" aria-label="Essay themes">
+        <button role="tab" aria-selected="true" aria-controls="t1-en" id="tab1-en">Theme 1 · A new perspective</button>
+        <button role="tab" aria-selected="false" aria-controls="t2-en" id="tab2-en" tabindex="-1">Theme 2 · Finding your strengths</button>
+        <button role="tab" aria-selected="false" aria-controls="t3-en" id="tab3-en" tabindex="-1">Theme 3 · Mapping your future</button>
+        <button role="tab" aria-selected="false" aria-controls="t4-en" id="tab4-en" tabindex="-1">Theme 4 · A record of growth</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="t1-en" aria-labelledby="tab1-en">
+        <h3>“Thinking outside the box”</h3>
+        <div class="sub">How has the way you see the world and its problems changed since the program began?</div>
+        <ul>
+          <li>What’s the biggest way you’ve changed through this program?</li>
+          <li>Describe that change using the sentence “I used to think …, but now I think ….”</li>
+          <li>If you had to sum up the biggest lesson from this program in one sentence, what would it be?</li>
+        </ul>
+        <div class="sample"><small>Example (borrow the flow, not the words)</small>When we first pitched our idea, I assumed a good product was the same thing as a product that sells. That changed after we interviewed ten pet owners. What they wanted wasn’t a smarter gadget — it was peace of mind when they left the house. I used to think technology solves problems, but now I think technology only becomes useful once you truly understand people.</div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="t2-en" aria-labelledby="tab2-en" hidden>
+        <h3>“Unlocking your potential”</h3>
+        <div class="sub">What new strength did you discover in yourself while tackling real problems?</div>
+        <ul>
+          <li>What did you find mattered most when solving problems?</li>
+          <li>What new ability did you discover in yourself?</li>
+          <li>What challenge or change would you like to take on with it?</li>
+        </ul>
+        <div class="sample"><small>Example</small>The night before our pitch, I realized our revenue model didn’t add up. Everyone was exhausted, but I opened the spreadsheet and reworked the numbers one by one. That’s when it hit me: I’m not the person who does the talking up front, but I am the person who catches what everyone else missed — and doesn’t let it go.</div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="t3-en" aria-labelledby="tab3-en" hidden>
+        <h3>“Mapping out the future”</h3>
+        <div class="sub">How did this startup experience shape the way you think about work and your dreams?</div>
+        <ul>
+          <li>What did it teach you about careers and what work means?</li>
+          <li>Did it spark a new dream or give you a concrete goal?</li>
+          <li>Sum up what this experience taught you in one sentence.</li>
+        </ul>
+        <div class="sample"><small>Example</small>For years, all I’d say was that I wanted to be a developer. But building an app meant interviewing customers, setting prices, and pitching — and I realized coding was just one piece of the puzzle. Now my goal is sharper: to be someone who spots the real frustrations people deal with and builds the fix myself.</div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="t4-en" aria-labelledby="tab4-en" hidden>
+        <h3>“A letter to myself, five years from now”</h3>
+        <div class="sub">Building on what you’ve accomplished, picture the person you’ll be.</div>
+        <ul>
+          <li>What would you want your future self to remember about this experience?</li>
+          <li>Include the lessons you learned and the new goals you’ve set.</li>
+          <li>Describe the kind of person you want to become and the changes you want to make.</li>
+        </ul>
+        <div class="sample"><small>Example</small>Dear future me, you’re probably swamped with college or your first job right now. At sixteen, I learned for the first time just how much the words “our team” can carry. Don’t forget the night I finished our presentation with a friend I hadn’t spoken to in three days after we’d argued.</div>
+      </div>
+
+      <h3>How to structure a strong essay</h3>
+      <ol class="steps">
+        <li><strong>Open with a scene</strong><span>Start with a specific moment — “At our very first team meeting…” — to draw the reader in.</span></li>
+        <li><strong>Show the struggle</strong><span>Write about what was hard and what you tried. Attempts that failed make great material, too.</span></li>
+        <li><strong>Reach the turning point</strong><span>Explain what shifted in your thinking or in yourself along the way.</span></li>
+        <li><strong>Look ahead</strong><span>Close with how you plan to use the scholarship and who you want to become.</span></li>
+      </ol>
+
+      <h3>Before you submit</h3>
+      <ul class="check">
+        <li>Does your essay read as one connected story rather than a list of answers?</li>
+        <li>Does it include details only you could write — your team, your product, your customers?</li>
+        <li>Is it entirely your own work, not copied from someone else or written by AI?</li>
+        <li>Is there anything you’d like to say to the Foundation or the people you worked with?</li>
+      </ul>
+    </section>
+
+    <section id="privacy-en">
+      <h2>Privacy and important notes</h2>
+      <p>Your personal information will be used only to disburse the scholarship, verify recipients, and prepare supporting records. It will be securely deleted in accordance with applicable regulations once it’s no longer needed.</p>
+      <ul class="check">
+        <li>Make sure your account number and account holder match your bankbook exactly. Even a single typo can delay your scholarship.</li>
+        <li>If the scholarship is going to a parent’s account, the account holder must be the parent named in the form.</li>
+        <li>ID numbers are used only to process your scholarship and are deleted afterward.</li>
+        <li>Excerpts from essays may be shared anonymously in the Foundation’s reports and promotional materials. You can opt out in the form.</li>
+        <li>If you made a mistake on the form, please don’t submit it again — contact Minjung Kim instead.</li>
+      </ul>
+    </section>
+
+    <section id="faq-en">
+      <h2>FAQ</h2>
+      <details><summary>I don’t have a bank account in my name.</summary><p>Middle and high school students can receive the scholarship through a parent’s account. Just select “parent’s account” in the form and enter your parent’s ID number and account details.</p></details>
+      <details><summary>I’m an international student and don’t have a Korean bank account.</summary><p>Please contact us before submitting the form, and we’ll walk you through how the scholarship can be disbursed.</p></details>
+      <details><summary>Is the process the same for out-of-school youth?</summary><p>Yes. Just enter “학교 밖 청소년” (out-of-school youth) in place of a school name.</p></details>
+      <details><summary>What format should my essay be in?</summary><p>Any format works. Aim for 1,000–1,500 characters and send the finished file by email or KakaoTalk. The sample essay is a good place to start.</p></details>
+      <details><summary>Do I have to spend the scholarship on something specific?</summary><p>We encourage IP projects, R&amp;D, and international exchange, but you’re free to decide what works best for you. If you can, send us a quick note later about how you used it — it means a lot to the Foundation.</p></details>
+    </section>
+
+    <section id="contact-en">
+      <h2>Contact</h2>
+      <p>Minjung Kim, President, KoreaPEN (Korean national office of PEN Worldwide)<br>
+      Phone <a href="tel:+821066157826">+82-10-6615-7826</a> · Email <a href="mailto:mjkim@koreapen.org">mjkim@koreapen.org</a></p>
+      <div class="cta-row"><a class="btn primary" href="https://forms.gle/vxg2UP4HngH7wPkd7" target="_blank" rel="noopener">Open the online form</a></div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="in">2026 Future Entrepreneur Leadership Scholarship Recipient Guide / ILGOK Foundation</div>
+</footer>
+</div>
+
 
 <script>
-// 설문 링크가 준비되면 아래 주소만 바꾸면 됩니다.
-const FORM_URL = "https://forms.gle/vxg2UP4HngH7wPkd7";
-if (FORM_URL) {
-  ["formBtn2","formBtn3"].forEach(id => {
-    const b = document.getElementById(id);
-    b.href = FORM_URL; b.target = "_blank"; b.rel = "noopener";
-    b.removeAttribute("aria-disabled"); b.textContent = "온라인 설문 열기";
-  });
+const TITLES = {ko: "2026 미래 창업가 리더십 장학금 수혜 가이드북", en: "2026 Future Entrepreneur Leadership Scholarship Recipient Guide"};
+const blocks = [...document.querySelectorAll(".lang-block")];
+const btns = [...document.querySelectorAll("[data-set-lang]")];
+function setLang(l, save){
+  blocks.forEach(b => b.hidden = b.dataset.lang !== l);
+  btns.forEach(b => b.setAttribute("aria-pressed", b.dataset.setLang === l));
+  document.documentElement.lang = l;
+  document.title = TITLES[l];
+  if (save) { try { localStorage.setItem("ilgok-lang", l); } catch(e){} }
 }
+let start = null;
+try { start = localStorage.getItem("ilgok-lang"); } catch(e){}
+if (!start) start = (navigator.language || "ko").toLowerCase().startsWith("ko") ? "ko" : "en";
+const h = location.hash.slice(1);
+if (h) start = h.endsWith("-en") ? "en" : (document.getElementById(h) ? "ko" : start);
+setLang(start, false);
+btns.forEach(b => b.addEventListener("click", () => { setLang(b.dataset.setLang, true); window.scrollTo(0,0); }));
 
-// tabs
-const tabs = [...document.querySelectorAll('[role="tab"]')];
-function select(t){
-  tabs.forEach(x => {
+// tabs (per tablist)
+document.querySelectorAll('[role="tablist"]').forEach(list => {
+  const tabs = [...list.querySelectorAll('[role="tab"]')];
+  const select = t => tabs.forEach(x => {
     const on = x === t;
     x.setAttribute("aria-selected", on); x.tabIndex = on ? 0 : -1;
     document.getElementById(x.getAttribute("aria-controls")).hidden = !on;
   });
-}
-tabs.forEach((t,i) => {
-  t.addEventListener("click", () => select(t));
-  t.addEventListener("keydown", e => {
-    if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
-      const n = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
-      select(n); n.focus();
-    }
+  tabs.forEach((t,i) => {
+    t.addEventListener("click", () => select(t));
+    t.addEventListener("keydown", e => {
+      if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+        const n = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+        select(n); n.focus();
+      }
+    });
   });
 });
 
 // toc highlight
-const links = [...document.querySelectorAll("nav.toc a")];
 if ("IntersectionObserver" in window) {
+  const links = [...document.querySelectorAll("nav.toc a")];
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) links.forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id));
   }), {rootMargin: "-30% 0px -60% 0px"});
